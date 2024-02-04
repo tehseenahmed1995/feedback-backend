@@ -43,7 +43,7 @@ class AuthController extends Controller
         if(!$response['error']) {
            return ResponseUtil::successWithData($response['data'], 'user_login', 200 );
         }
-        return ResponseUtil::errorWithMessage($response['message'], '' , $response['error'] ?? 400);
+        return ResponseUtil::errorWithMessage($response['message'], 'user_login_fail' , $response['status'] ?? 400);
     }
 
      /**
@@ -61,12 +61,12 @@ class AuthController extends Controller
     }
 
     /**
-    * get all users 
+    * get all users
     *
     * @return @return UserResource
     */
     public function list()
     {
-        return UserResource::collection($this->authService->getAllUsers());  
+        return UserResource::collection($this->authService->getAllUsers());
     }
 }

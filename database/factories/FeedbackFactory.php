@@ -19,6 +19,7 @@ class FeedbackFactory extends Factory
     {
         return [
             'title' => fake()->sentence,
+            'description' => fake()->text(200),
             'category' => fake()->randomElement([1, 2, 3]),
             'user_id' => User::all()->random()->id,
         ];

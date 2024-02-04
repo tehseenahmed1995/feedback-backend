@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('feedbacks', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->text('description');
             $table->string('category');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();

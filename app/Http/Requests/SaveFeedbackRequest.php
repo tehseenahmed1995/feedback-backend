@@ -24,7 +24,7 @@ class SaveFeedbackRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
-            'content'=>'required|string',
+            'description'=>'required|string',
             'category' => ['required','numeric',Rule::in([1, 2, 3])]
         ];
     }

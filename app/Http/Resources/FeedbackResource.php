@@ -15,7 +15,9 @@ class FeedbackResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
+            'id' => $this->id,
             'title' => $this->title,
+            'description' => $this->description,
             'category' => $this->category,
             'submitted_by' => UserResource::make($this->whenLoaded('user')),
             'comments' => CommentResource::collection($this->whenLoaded('comments')),
